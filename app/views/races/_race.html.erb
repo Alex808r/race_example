@@ -1,0 +1,12 @@
+<h1> Page about "<%= race.name %>"</h1>
+
+<h3>
+  <ul>
+    <li>Name: <%= race.name %></li>
+    <p>Place: <%= race.place %></p>
+    <p>Date: <%= race.date %></p>
+  </ul>
+  <%= link_to 'Edit Race', edit_race_path(race) %> |
+  <%= link_to 'Back to all Races', races_path %>
+</h3>
+
