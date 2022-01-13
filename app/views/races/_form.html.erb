@@ -1,0 +1,25 @@
+<div class="form">
+  <%= form_with model: @race, local: true do |form| %>
+
+    <%= render 'shared/errors', object: @race %>
+
+    <p>
+      <%= form.label :name, class: 'form-label' %><br>
+      <%= form.text_field :name, class: 'form-control'%>
+    </p>
+
+    <p>
+      <%= form.label :place, class: 'form-label' %><br>
+      <%= form.text_field :place, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :date, class: 'form-label' %><br>
+      <%= form.datetime_field :date, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.submit class: 'btn btn-primary' %>
+    </p>
+  <% end %>
+</div>

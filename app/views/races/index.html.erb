@@ -1,0 +1,18 @@
+<h3> <%= link_to 'Create new Race', new_race_path %> </h3>
+
+<ul>
+  <h3>
+  <% @races.find_each do |race| %>
+    <div class="card">
+      <p> Name: <%= race.name %> </p>
+      <p> Place: <%= race.place %> </p>
+      <p> Date: <%= race.date %> </p>
+      <p>
+          <%= link_to 'Open Race', race_path(race) %> |
+          <%= link_to 'Edit Race', edit_race_path(race) %> |
+          <%= link_to 'Delete Race', race_path(race), data: {method: :delete, confirm: 'Are you sure?'}  %>
+    </div>
+    </p>
+  <% end %>
+  </h3>
+</ul>
