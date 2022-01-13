@@ -44,6 +44,11 @@ group :development do
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # RuboCop is a Ruby static code analyzer
+  gem 'rubocop', '~> 1.22', require: false
+  gem 'rubocop-performance', '~> 1.11', require: false
+  gem 'rubocop-rails', '~> 2.12', require: false
 end
 
 group :test do
