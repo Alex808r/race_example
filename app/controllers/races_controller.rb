@@ -11,7 +11,9 @@ class RacesController < ApplicationController
     @race = Race.new
   end
 
-  def show; end
+  def show
+    @events = @race.events
+  end
 
   def edit; end
 
