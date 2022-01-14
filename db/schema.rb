@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_13_203641) do
+ActiveRecord::Schema.define(version: 2022_01_14_063959) do
 
   create_table "event_categories", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "event_category_group_id", null: false
+    t.index ["event_category_group_id"], name: "index_event_categories_on_event_category_group_id"
+  end
+
+  create_table "event_category_groups", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -36,6 +44,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_203641) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "event_categories", "event_category_groups"
   add_foreign_key "events", "event_categories"
   add_foreign_key "events", "races"
 end

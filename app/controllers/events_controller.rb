@@ -12,6 +12,7 @@ class EventsController < ApplicationController
 
   def show
     @event_category = @event.event_category
+    @event_category_group = @event_category.event_category_group
   end
 
   private

@@ -8,18 +8,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-return if Race.exists? && Event.exists? && EventCategory.exists?
+return if Race.exists? && Event.exists? && EventCategory.exists? && EventCategoryGroup.exists?
 
 races = Race.create!([
                        { name: 'Start 1', place: 'UK', date: Time.zone.now },
                        { name: 'Start 2', place: 'USA', date: Time.zone.now }
                      ])
 
-event_categories = EventCategory.create!([
-                                           { title: 'super' },
-                                           { title: 'trail 10k' },
-                                           { title: 'trail 50k' }
+event_category_groups = EventCategoryGroup.create!([
+                                                     { title: 'Category not Trail' },
+                                                     { title: 'Category Trail' }
+                                                   ])
 
+event_categories = EventCategory.create!([
+                                           { title: 'super', event_category_group: event_category_groups[0] },
+                                           { title: 'trail 10k', event_category_group: event_category_groups[1] },
+                                           { title: 'trail 50k', event_category_group: event_category_groups[1] }
                                          ])
 
 # rubocop:disable Lint/UselessAssignment

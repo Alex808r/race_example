@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class EventCategory < ApplicationRecord
-  # has_many :events
+  belongs_to :event_category_group
 end
