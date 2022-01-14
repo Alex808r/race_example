@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show]
 
   def new
-    @event = Race.new
+    @event = Event.new
   end
 
   def create; end
