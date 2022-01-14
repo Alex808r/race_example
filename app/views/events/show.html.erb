@@ -1,0 +1,9 @@
+<h3>
+  <p> Event info </p>
+  <p> Title: "<%= @event.title %>" </p>
+  <p> Event category: "<%= @event_category.title %>"</p>
+  <p>
+    <%= link_to 'Main page', root_path %>
+    <%= link_to 'Back', race_path(@event.race) %>
+  </p>
+</h3>
