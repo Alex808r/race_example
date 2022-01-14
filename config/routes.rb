@@ -3,5 +3,7 @@
 Rails.application.routes.draw do
   root to: 'races#index'
 
-  resources :races
+  resources :races do
+    resources :events, shallow: true
+  end
 end

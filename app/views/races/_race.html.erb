@@ -5,6 +5,11 @@
     <li>Name: <%= race.name %></li>
     <p>Place: <%= race.place %></p>
     <p>Date: <%= race.date %></p>
+    <p>Events: <% race.events.each do |event| %> </p>
+      <li> <%= link_to event.title, event_path(event) %> </li>
+      <% end %>
+
+
   </ul>
   <%= link_to 'Edit Race', edit_race_path(race) %> |
   <%= link_to 'Back to all Races', races_path %>
