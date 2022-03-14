@@ -3,6 +3,7 @@
     <% flash.each do |key, msg| %>
       <div class="alert alert-<%= class_for_flash_message(key) %> ">
         <%= msg.html_safe %>
+        
       </div>
     <% end %>
   </div>
