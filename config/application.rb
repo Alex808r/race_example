@@ -20,6 +20,7 @@ module RaceExample
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # #add 2
   end
   # add 
 end
