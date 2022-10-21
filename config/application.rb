@@ -22,5 +22,6 @@ module RaceExample
     # config.eager_load_paths << Rails.root.join("extras")
     # #add 2
   end
-  # add 
+  # add
+  # br-1
 end
