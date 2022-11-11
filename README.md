@@ -29,3 +29,4 @@ Things you may want to cover:
 ------
 fix-1
 fix-2
+fix-2.2
