@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :races do
     resources :events, shallow: true
   end
+
+  resources :regions do
+    resources :cities
+  end
 end

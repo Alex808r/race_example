@@ -1,0 +1,6 @@
+<%= form_with url: regions_path do |f| %>
+  <label> Выберите файл для загрузки :</label>
+  <%= f.file_field :file_upload %>
+  <%= f.submit 'Загрузить файл', class: 'btn btn-primary mt-3' %>
+<% end %>
+

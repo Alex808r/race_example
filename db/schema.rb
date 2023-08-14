@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_063959) do
+ActiveRecord::Schema.define(version: 2023_08_07_135522) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name_city"
+    t.string "socr_city"
+    t.string "gni_city"
+    t.integer "region_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["region_id"], name: "index_cities_on_region_id"
+  end
 
   create_table "event_categories", force: :cascade do |t|
     t.string "title", null: false
@@ -44,6 +54,15 @@ ActiveRecord::Schema.define(version: 2022_01_14_063959) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string "name_region"
+    t.string "socr_region"
+    t.string "gni_region"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "cities", "regions"
   add_foreign_key "event_categories", "event_category_groups"
   add_foreign_key "events", "event_categories"
   add_foreign_key "events", "races"
